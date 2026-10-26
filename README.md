@@ -10,6 +10,16 @@ npm run dev
 
 기본 주소: http://127.0.0.1:5183
 
+## GitHub Pages
+
+`.github/workflows/pages.yml`에서 main 푸시·PR마다 테스트와 정적 빌드를 검증합니다. 배포 대상은 소스와 문서를 제외한 `dist/`입니다.
+
+GitHub Pages의 게시 소스를 GitHub Actions로 활성화한 뒤 저장소 Actions 변수 `PAGES_ENABLED`를 `true`로 설정하면 main 푸시 시 자동 배포합니다. 최초 배포는 Actions에서 해당 워크플로를 수동 실행할 수도 있습니다. Pages 활성화 전에는 검증만 실행하고 배포 단계는 건너뜁니다.
+
+기본 사이트 주소: https://onoff-co.github.io/healthy-teeth/
+
+상대 자산 경로와 해시 라우팅을 사용하여 `/healthy-teeth/#/booking` 등 하위 경로에서 동작합니다. GitHub 플랜에 따라 비공개 저장소의 Pages 지원 여부가 달라집니다.
+
 ```powershell
 npm test
 npm run build
