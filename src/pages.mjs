@@ -14,7 +14,7 @@ export function home() {
 }
 export function about() {
   return `
-  <section class="page-intro container"><span class="eyebrow">HELLO, HEALTHY TEETH</span><h1>조금 더 편안한 치과,<br><span>건강니를 만나다.</span></h1><p>잘 듣고, 충분히 설명하고, 함께 결정하는 진료.<br>건강니가 생각하는 좋은 치과의 시작입니다.</p></section>
+  <section class="page-title container"><h1>치과 소개</h1></section>
   <figure class="about-image container"><img src="./assets/about.webp" alt="연두색 리셉션과 하늘색 소파, 넓은 창을 갖춘 건강니의 대기 공간" width="1536" height="1024"><figcaption>WELCOME TO YOUR COMFORT ZONE<span>자연의 색과 온기를 담은 공간</span></figcaption></figure>
   <section class="section container about-values"><div><span class="eyebrow">OUR PROMISE</span><h2>믿음은 작은 배려에서<br>시작된다고 믿습니다.</h2></div><div class="value-list"><article><h3>이야기를 먼저 듣겠습니다.</h3><p>불편한 점과 걱정되는 마음을 충분히 나눌 수 있는 상담 시간을 준비합니다.</p></article><article><h3>이해할 수 있게 설명하겠습니다.</h3><p>현재 치아 상태와 가능한 진료 방향을 알기 쉬운 말로 설명합니다.</p></article><article><h3>일상을 함께 생각하겠습니다.</h3><p>치료를 시작하는 순간부터 관리하는 시간까지, 생활에 맞는 계획을 함께 고민합니다.</p></article></div></section>
   <section class="soft-section"><div class="container"><div class="section-heading"><div><span class="eyebrow">SPACE & COMFORT</span><h2>편안함을 만드는 공간</h2></div><p>낯선 긴장감을 덜어주는<br>건강니의 작은 배려.</p></div><div class="space-grid"><article>${icon("leaf")}<h3>빛이 머무는 대기실</h3><p>부드러운 색감과 자연광이 어우러져 잠시 쉬어갈 수 있는 공간.</p></article><article>${icon("chat")}<h3>이야기에 집중하는 상담실</h3><p>주변의 방해를 줄이고 내 이야기를 편안히 나눌 수 있는 공간.</p></article><article>${icon("tooth")}<h3>차분하게 준비된 진료실</h3><p>꼭 필요한 장비를 정돈하고 진료의 흐름을 생각한 공간.</p></article></div></div></section>
@@ -23,7 +23,7 @@ export function about() {
 }
 export function serviceList() {
   return `
-  <section class="page-intro container"><span class="eyebrow">CARE FOR EVERY SMILE</span><h1>다른 고민, 같은 마음.<br><span>당신을 위한 진료.</span></h1><p>치아의 작은 불편부터 오랫동안 미뤄둔 고민까지.<br>지금 필요한 진료를 살펴보세요.</p></section>
+  <section class="page-title container"><h1>진료 안내</h1></section>
   <section class="container service-overview">${services.map((s) => `<a class="service-row ${s.color}" href="#/services/${s.id}"><div class="treatment-icon">${icon(s.id)}</div><div><span class="eyebrow">${s.en}</span><h2>${s.name}</h2></div><p>${s.summary}</p><span class="text-link">자세히 보기</span></a>`).join("")}</section>
   <section class="section container equipment-section"><img src="./assets/equipment.webp" alt="정돈된 진료 공간의 구강 스캐너와 치아 모형 화면" width="1536" height="1024" loading="lazy"><div><span class="eyebrow">THOUGHTFUL DETAIL</span><h2>보이지 않는 과정에도<br>세심함을 더합니다.</h2><p>상태를 살펴보는 시간부터 치료 계획을 설명하는 순간까지.<br>진료에 필요한 도구와 과정을 이해하기 쉽게 안내합니다.</p><p class="muted small">치료 방법과 사용 장비는 진료 상황에 따라 달라질 수 있습니다.</p></div></section>${cta()}
 `;
