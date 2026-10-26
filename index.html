@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#234b45">
+  <meta name="description" content="편안한 공간에서 시작하는 건강한 미소. 건강니 치과 소개, 진료 안내, 온라인 예약.">
+  <title>건강니 치과</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./src/styles.css">
+  <link rel="stylesheet" href="./src/verification.css">
+  <link rel="preload" href="./assets/hero.webp" as="image">
+</head>
+<body>
+  <a class="skip-link" href="#main">본문 바로가기</a>
+  <div class="top-note">당신의 일상에, 건강한 미소를 더합니다 <span>HEALTHY TEETH, HAPPY DAYS</span></div>
+  <header class="site-header"><div class="container header-inner">
+    <a class="brand" href="#/" aria-label="건강니 치과 홈"><svg viewBox="0 0 44 48" aria-hidden="true"><path d="M22 9C9-1 2 10 6 23c2 7 3 19 8 19 5 0 3-14 8-14s3 14 8 14c5 0 6-12 8-19C42 10 35-1 22 9Z" fill="none" stroke="currentColor" stroke-width="2.6"/><path d="M14 15c4 0 6 3 8 3s4-3 8-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>건강니 치과<small>HEALTHY TEETH DENTAL</small></span></a>
+    <nav aria-label="주 메뉴"><a href="#/about" data-nav="about">치과 소개</a><a href="#/services" data-nav="services">진료 안내</a><a href="#/booking" data-nav="booking">진료 예약</a></nav>
+    <a href="#/reservations" class="header-check">예약 확인</a>
+  </div></header>
+  <main id="main" tabindex="-1"></main>
+  <footer class="site-footer"><div class="container">
+    <div class="footer-top"><div><a href="#/" class="footer-brand">건강니 치과<span>HEALTHY TEETH DENTAL</span></a><p>당신의 미소가 편안해지는 곳.</p></div><div class="footer-links"><a href="#/about">치과 소개</a><a href="#/booking">예약하기</a><a href="#/reservations">내 예약 확인</a><button type="button" data-action="privacy">개인정보 안내</button></div></div>
+    <div class="footer-meta"><span>대표자 김건강</span><span>사업자등록번호 000-00-00000</span><span>서울특별시 마포구 미소로 24, 3층</span><span>대표전화 02-0000-0000</span></div>
+    <div class="footer-bottom"><p>© HEALTHY TEETH DENTAL. ALL RIGHTS RESERVED.</p></div>
+  </div></footer>
+  <button class="quick-contact" data-action="consult" aria-haspopup="dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 0 1-8 8H5l-3 3V11a9 9 0 0 1 18 0Z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7 10h8M7 14h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span>빠른 상담</span></button>
+  <dialog id="consult-dialog" class="consult-dialog" aria-labelledby="consult-title"><div class="dialog-head"><span class="eyebrow">LET’S TALK</span><button data-close type="button" class="close-button" aria-label="상담 창 닫기">×</button></div><h2 id="consult-title">처음이라 궁금한 마음,<br>편하게 물어보세요.</h2><p>진료 항목을 선택하면 예약 화면에서<br>상담 시간을 살펴볼 수 있어요.</p><label for="quick-service">어떤 진료가 궁금하세요?</label><select id="quick-service"><option value="general">일반 진료</option><option value="whitening">치아 미백</option><option value="orthodontics">치아 교정</option><option value="implant">임플란트</option></select><button class="button primary full" data-action="consult-book">상담 시간 선택하기</button><div class="dialog-hours"><span>평일 10:00–19:00</span><span>토요일 10:00–14:00</span></div></dialog>
+  <dialog id="info-dialog" class="info-dialog" aria-labelledby="info-title"><div class="dialog-head"><span class="eyebrow">INFORMATION</span><button data-close type="button" class="close-button" aria-label="안내 닫기">×</button></div><h2 id="info-title"></h2><div id="info-content"></div><button class="button primary full" data-close type="button">확인</button></dialog>
+  <div id="toast" role="status" class="toast" hidden></div>
+  <noscript><p class="container">페이지 이동과 예약 기능을 이용하려면 JavaScript를 켜 주세요.</p></noscript>
+  <script type="module" src="./src/app.mjs"></script>
+</body>
+</html>
