@@ -36,8 +36,8 @@ export function createStore(storage) {
     async cancel(id, identity) {
       const action = () => {
         const current = read(storage);
-        if (!matchingReservations(current, identity).some(r => r.id === id))
-          throw new Error('현재 예약자의 기록만 취소할 수 있습니다.');
+        if (!matchingReservations(current, identity).some((r) => r.id === id))
+          throw new Error("현재 예약자의 기록만 취소할 수 있습니다.");
         const records = cancelReservation(current, id);
         storage.setItem(key, JSON.stringify(records));
         return records;
@@ -48,15 +48,18 @@ export function createStore(storage) {
     },
     async clearFor(identity) {
       if (!identity || Object.keys(identityErrors(identity)).length)
-        throw new Error('예약자 확인이 필요합니다.');
+        throw new Error("예약자 확인이 필요합니다.");
       const action = () => {
         const current = read(storage);
-        const ids = new Set(matchingReservations(current, identity).map(r => r.id));
-        const remaining = current.filter(r => !ids.has(r.id));
+        const ids = new Set(
+          matchingReservations(current, identity).map((r) => r.id),
+        );
+        const remaining = current.filter((r) => !ids.has(r.id));
         if (remaining.length) storage.setItem(key, JSON.stringify(remaining));
         else storage.removeItem(key);
       };
-      if (globalThis.navigator?.locks) return navigator.locks.request(key, async () => action());
+      if (globalThis.navigator?.locks)
+        return navigator.locks.request(key, async () => action());
       return action();
     },
   };
